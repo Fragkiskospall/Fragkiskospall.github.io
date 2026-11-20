@@ -4,140 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notifier · FragkiskOSource</title>
-<meta name="description" content="Ειδοποιήσεις για φοιτητές από το Open eClass, για Mac και Windows. Δωρεάν και ανοιχτός κώδικας.">
-<meta name="theme-color" content="#0a0a0b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 22 22%22%3E%3Crect width=%2222%22 height=%2222%22 rx=%225%22 fill=%22%230a0a0b%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%227.5%22 fill=%22none%22 stroke=%22%23ededed%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%223%22 fill=%22%23d4ff3f%22/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<meta name="description" content="Ειδοποιήσεις από το Open eClass, για Mac και Windows. Δωρεάν, ανοιχτός κώδικας.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230b0b0b%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%23e8e8e6%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap">
 <style>
-body{margin:0;background:#0a0a0b}
-a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
+body{margin:0;background:#0b0b0b}
+a{color:#e8e8e6;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
 </style>
-<style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
-<div style="min-height: 100vh; background: #0a0a0b; color: #ededed; font-family: 'Inter Tight', system-ui, sans-serif; -webkit-font-smoothing: antialiased">
+<div style="min-height: 100vh; background: #0b0b0b; color: #e8e8e6; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column">
 
-  <header style="position: sticky; top: 0; z-index: 10; background: rgba(10,10,11,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid #1c1c1f">
-    <nav aria-label="Κύρια πλοήγηση" style="max-width: 1360px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
-      <a href="/" style="display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; min-height: 44px">
-        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#ededed" stroke-width="1.5"></circle><circle cx="11" cy="11" r="3.5" fill="#d4ff3f"></circle></svg>
-        <span>Fragkisk<span style="color: #d4ff3f">OS</span>ource</span>
-      </a>
-      <a href="/" style="display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; color: #a1a1a6">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
-        Όλα τα projects
-      </a>
+  <header style="padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <a href="/" style="font-weight: 500; font-size: 14px; min-height: 44px; display: flex; align-items: center">FragkiskOSource</a>
+    <nav aria-label="Κύρια πλοήγηση" style="display: flex; gap: 24px; font-size: 14px">
+      <a href="/notifier/" aria-current="page" style="min-height: 44px; display: flex; align-items: center">Notifier</a>
+      <a href="https://github.com/Fragkiskospall" style="color: #8a8a87; min-height: 44px; display: flex; align-items: center">GitHub</a>
     </nav>
   </header>
 
-  <main>
-    <section style="max-width: 1360px; margin: 0 auto; padding: 104px 32px 80px">
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #d4ff3f; color: #0a0a0b">v3.0 · Mac & Windows</span>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">Python 3.11+</span>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">MIT</span>
+  <main style="flex: 1; padding: 0 28px">
+    <section style="margin: 120px 0 72px; max-width: 620px">
+      <h1 style="margin: 0; font-weight: 400; font-size: 26px; line-height: 1.35; letter-spacing: -0.01em">Notifier</h1>
+      <p style="margin: 6px 0 0; font-size: 26px; line-height: 1.35; letter-spacing: -0.01em; color: #8a8a87">Σου λέει τι άλλαξε στο eClass, για να μη χρειάζεται να το ελέγχεις εσύ.</p>
+      <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 15px">
+        <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-macos.zip" style="text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: flex; align-items: center">Λήψη για Mac</a>
+        <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-windows.zip" style="text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: flex; align-items: center">Λήψη για Windows</a>
+        <a href="https://github.com/Fragkiskospall/notifier" style="color: #8a8a87; min-height: 44px; display: flex; align-items: center">Κώδικας</a>
       </div>
-      <h1 style="margin: 0; font-weight: 300; font-size: clamp(56px, 9vw, 144px); line-height: 0.92; letter-spacing: -0.05em">Notifier</h1>
-      <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: flex-end">
-        <p style="margin: 0; max-width: 620px; font-size: 22px; line-height: 1.5; color: #d6d6da">Σταμάτα να κάνεις refresh στο eClass. Ο Notifier ελέγχει για σένα ανακοινώσεις, εργασίες, εργαστήρια και βαθμούς, και σε ειδοποιεί στο κινητό.</p>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap">
-            <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-macos.zip" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #ededed; color: #0a0a0b; font-weight: 500; font-size: 15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Λήψη για Mac</a>
-            <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-windows.zip" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #2a2a2e; color: #ededed; font-size: 15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Λήψη για Windows</a>
-            <a href="https://github.com/Fragkiskospall/notifier" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 999px; color: #a1a1a6; font-size: 15px">Κώδικας στο GitHub →</a>
-          </div>
-      </div>
+      <p style="margin: 12px 0 0; font-size: 13px; color: #8a8a87; max-width: 520px">Στο Mac, σύρε την εφαρμογή στο Applications και άνοιξέ τη με δεξί κλικ την πρώτη φορά. Στα Windows, πάτα More info και μετά Run anyway.</p>
     </section>
 
-    <section aria-labelledby="how" style="max-width: 1360px; margin: 0 auto; padding: 80px 32px; border-top: 1px solid #1c1c1f">
-      <h2 id="how" style="margin: 0 0 56px; font-weight: 400; font-size: 40px; letter-spacing: -0.03em">Πώς δουλεύει</h2>
-      <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
-        <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">01</span>
-          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Κατέβασε την εφαρμογή</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Για Mac ή Windows. Στο Mac σύρε την στο /Applications και άνοιξέ την με δεξί κλικ → Άνοιγμα την πρώτη φορά.</p>
-        </li>
-        <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">02</span>
-          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Διάλεξε πανεπιστήμιο και συνδέσου</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Η σύνδεση ελέγχεται στη στιγμή. Οι κωδικοί μπαίνουν στο Keychain ή στο Credential Manager, όχι σε αρχείο.</p>
-        </li>
-        <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">03</span>
-          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Πάρε ειδοποιήσεις</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Στο κινητό μέσω ntfy (σκανάρεις ένα QR) ή στον υπολογιστή. Οι έλεγχοι τρέχουν αθόρυβα στο παρασκήνιο.</p>
-        </li>
-      </ol>
-    </section>
+    <div style="aspect-ratio: 21 / 9; max-height: 620px; width: 100%; background: #111111; overflow: hidden">
+      <svg viewBox="0 0 1200 514" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.1" fill="#262626"></circle>
+          </pattern>
+        </defs>
+        <rect width="1200" height="514" fill="#111111"></rect>
+        <rect width="1200" height="514" fill="url(#dots)"></rect>
+        <g fill="none" stroke-width="1">
+          <circle cx="780" cy="257" r="64" stroke="#454543"></circle>
+          <circle cx="780" cy="257" r="132" stroke="#363634"></circle>
+          <circle cx="780" cy="257" r="204" stroke="#2b2b29"></circle>
+          <circle cx="780" cy="257" r="280" stroke="#222220"></circle>
+        </g>
+        <circle cx="780" cy="257" r="5" fill="#e8e8e6"></circle>
+      </svg>
+    </div>
 
-    <section aria-labelledby="jobs" style="max-width: 1360px; margin: 0 auto; padding: 80px 32px; border-top: 1px solid #1c1c1f">
-      <div style="display: flex; flex-wrap: wrap; gap: 48px">
-        <div style="flex: 1 1 320px; min-width: 0">
-          <h2 id="jobs" style="margin: 0 0 16px; font-weight: 400; font-size: 40px; letter-spacing: -0.03em">Τι ελέγχει, και πότε</h2>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6; max-width: 380px">Οι ώρες είναι προεπιλογές και αλλάζουν από ένα αρχείο ρυθμίσεων.</p>
-        </div>
-        <div style="flex: 2 1 560px; min-width: 0; overflow-x: auto">
-          <table style="width: 100%; border-collapse: collapse; font-size: 16px; min-width: 520px">
-            <thead>
-              <tr style="text-align: left; color: #8b8b91; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em">
-                <th scope="col" style="padding: 0 0 16px; font-weight: 400; border-bottom: 1px solid #2a2a2e">Λειτουργία</th>
-                <th scope="col" style="padding: 0 0 16px; font-weight: 400; border-bottom: 1px solid #2a2a2e">Πηγή</th>
-                <th scope="col" style="padding: 0 0 16px; font-weight: 400; border-bottom: 1px solid #2a2a2e">Συχνότητα</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Ανακοινώσεις</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Open eClass, RSS τμήματος</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-family: 'JetBrains Mono', monospace; font-size: 14px">κάθε 30′</td></tr>
-              <tr><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Βαθμοί</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Πύλη φοιτητών</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-family: 'JetBrains Mono', monospace; font-size: 14px">κάθε 30′</td></tr>
-              <tr><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Σύνοψη εργασιών</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Open eClass</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-family: 'JetBrains Mono', monospace; font-size: 14px">08:00 · 14:00 · 21:00</td></tr>
-              <tr><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Εργαστήρια</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Ομάδες χρηστών eClass</td><td style="padding: 20px 0; border-bottom: 1px solid #1c1c1f; font-family: 'JetBrains Mono', monospace; font-size: 14px">το πρωί της ημέρας</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <dl style="margin: 96px 0 140px; max-width: 880px; font-size: 15px">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Τι ελέγχει</dt>
+        <dd style="flex: 1 1 360px; margin: 0">Ανακοινώσεις μαθημάτων και τμήματος, προθεσμίες εργασιών, εργαστήρια και νέους βαθμούς.</dd>
       </div>
-    </section>
-
-    <section aria-labelledby="privacy" style="max-width: 1360px; margin: 0 auto; padding: 80px 32px; border-top: 1px solid #1c1c1f">
-      <div style="background: #d4ff3f; color: #0a0a0b; border-radius: 20px; padding: 56px; display: flex; flex-wrap: wrap; gap: 48px">
-        <div style="flex: 1 1 320px; min-width: 0">
-          <h2 id="privacy" style="margin: 0; font-weight: 400; font-size: 48px; line-height: 1.02; letter-spacing: -0.035em">Το πρόγραμμα δεν ξέρει τίποτα.</h2>
-        </div>
-        <ul style="flex: 1.3 1 420px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 20px; font-size: 17px; line-height: 1.5">
-          <li style="display: flex; gap: 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg><span>Οι κωδικοί σου ζουν μόνο στα GitHub Secrets του δικού σου repo.</span></li>
-          <li style="display: flex; gap: 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg><span>Ό,τι έχει δει αποθηκεύεται κρυπτογραφημένο με AES-256-GCM.</span></li>
-          <li style="display: flex; gap: 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg><span>Logs με μόνο αριθμούς. Push και email χωρίς περιεχόμενο σε ιδιωτική λειτουργία.</span></li>
-          <li style="display: flex; gap: 14px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg><span>Κανένας server τρίτου. Ούτε δικός μου.</span></li>
-        </ul>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Πότε</dt>
+        <dd style="flex: 1 1 360px; margin: 0">Κάθε 30 λεπτά. Η σύνοψη εργασιών έρχεται τρεις φορές την ημέρα.</dd>
       </div>
-    </section>
-
-    <section aria-labelledby="setup" style="max-width: 1360px; margin: 0 auto; padding: 80px 32px 160px; border-top: 1px solid #1c1c1f">
-      <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
-        <div style="flex: 1 1 320px; min-width: 0">
-          <h2 id="setup" style="margin: 0 0 16px; font-weight: 400; font-size: 40px; letter-spacing: -0.03em">Για developers</h2>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6; max-width: 380px">Ο κώδικας είναι ανοιχτός (MIT). Το dry run δείχνει τι θα σου έστελνε, χωρίς να στείλει τίποτα.</p>
-        </div>
-        <pre style="flex: 2 1 560px; min-width: 0; margin: 0; overflow-x: auto; background: #111113; border: 1px solid #1c1c1f; border-radius: 14px; padding: 28px 32px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.9; color: #d6d6da"><code><span style="color: #8b8b91"># κώδικας</span>
-git clone https://github.com/Fragkiskospall/notifier
-pip install -e ".[launcher]"
-
-<span style="color: #8b8b91"># ο launcher</span>
-fragkiskosource-notifier
-
-<span style="color: #8b8b91"># τι θα έστελνε τώρα;</span>
-python -m uniwa_notifier digest <span style="color: #d4ff3f">--dry-run</span></code></pre>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Πού ειδοποιεί</dt>
+        <dd style="flex: 1 1 360px; margin: 0">Στο κινητό μέσω ntfy ή στον υπολογιστή.</dd>
       </div>
-    </section>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Πανεπιστήμια</dt>
+        <dd style="flex: 1 1 360px; margin: 0">Πλήρως το ΠΑΔΑ. Ανακοινώσεις και εργασίες και σε άλλα ιδρύματα με Open eClass.</dd>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Απόρρητο</dt>
+        <dd style="flex: 1 1 360px; margin: 0">Οι κωδικοί μένουν στον υπολογιστή σου και το ιστορικό είναι κρυπτογραφημένο. Δεν υπάρχει server.</dd>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px 32px; padding: 18px 0; border-top: 1px solid #1e1e1e; border-bottom: 1px solid #1e1e1e">
+        <dt style="flex: 0 0 180px; color: #8a8a87">Άδεια</dt>
+        <dd style="flex: 1 1 360px; margin: 0">MIT, v3.0</dd>
+      </div>
+    </dl>
   </main>
 
-  <footer style="border-top: 1px solid #1c1c1f">
-    <div style="max-width: 1360px; margin: 0 auto; padding: 48px 32px 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap">
-      <p style="margin: 0; font-weight: 300; font-size: clamp(40px, 6vw, 88px); letter-spacing: -0.045em; line-height: 1; color: #2e2e33">Fragkisk<span style="color: #d4ff3f">OS</span>ource</p>
-      <div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #8b8b91">
-        <a href="https://github.com/Fragkiskospall" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">GitHub</a>
-        <span style="min-height: 44px; display: flex; align-items: center">Κώδικας υπό άδεια MIT</span>
-        <span style="min-height: 44px; display: flex; align-items: center">© 2026</span>
-      </div>
-    </div>
+  <footer style="padding: 20px 28px 28px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; color: #8a8a87">
+    <span>© 2026 FragkiskOSource</span>
+    <a href="https://github.com/Fragkiskospall/notifier" style="color: #8a8a87">github.com/Fragkiskospall/notifier</a>
   </footer>
 </div>
 </body>
