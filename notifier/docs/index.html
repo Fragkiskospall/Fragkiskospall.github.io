@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Πώς δουλεύει · Notifier</title>
+<meta name="description" content="Πώς δουλεύει ο Notifier: jobs, έλεγχος, απόρρητο, δομή κώδικα.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230b0b0b%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%23e8e8e6%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0b0b0b}
+a{color:#e8e8e6;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+.doc h2{margin:88px 0 16px;font-size:15px;font-weight:500;scroll-margin-top:24px}
+.doc p{margin:0 0 14px;max-width:640px}
+.doc ul{margin:0 0 14px;padding-left:18px;max-width:640px}
+.doc li{margin:0 0 6px}
+.doc code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#e8e8e6}
+.doc pre{margin:20px 0 24px;padding:20px 22px;background:#141413;color:#b5b5b2;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;line-height:1.5;overflow-x:auto}
+.doc pre code{font-size:inherit;color:inherit}
+.doc .rows{margin:16px 0 20px;max-width:880px}
+.doc .row{display:flex;flex-wrap:wrap;gap:4px 32px;padding:14px 0;border-top:1px solid #1e1e1e}
+.doc .row:last-child{border-bottom:1px solid #1e1e1e}
+.doc .k{flex:0 0 180px;color:#8a8a87}
+.doc .v{flex:1 1 360px}
+.doc .muted{color:#8a8a87}
+</style>
+<style>@media (max-width:820px){main.doc{display:block!important}main.doc>nav{display:none!important}}</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #0b0b0b; color: #e8e8e6; font-family: Inter, system-ui, sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column">
+
+  <header style="padding: 0 28px; height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <a href="/" style="font-weight: 500; font-size: 14px; min-height: 44px; display: flex; align-items: center">FragkiskOSource</a>
+    <nav aria-label="Κύρια πλοήγηση" style="display: flex; gap: 24px; font-size: 14px">
+      <a href="/notifier/" style="color: #8a8a87; min-height: 44px; display: flex; align-items: center">Notifier</a>
+      <a href="https://github.com/Fragkiskospall" style="color: #8a8a87; min-height: 44px; display: flex; align-items: center">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="doc" style="flex: 1; padding: 0 28px; display: flex; gap: 64px; align-items: flex-start">
+    <nav aria-label="Περιεχόμενα" style="flex: 0 0 200px; position: sticky; top: 24px; margin-top: 128px; font-size: 13px; display: flex; flex-direction: column; gap: 2px">
+      <a href="#eikona" style="color: #8a8a87; padding: 4px 0">Η μεγάλη εικόνα</a>
+      <a href="#jobs" style="color: #8a8a87; padding: 4px 0">Τα jobs</a>
+      <a href="#kyklos" style="color: #8a8a87; padding: 4px 0">Ένας κύκλος ελέγχου</a>
+      <a href="#neo" style="color: #8a8a87; padding: 4px 0">Τι είναι «νέο»</a>
+      <a href="#katalogos" style="color: #8a8a87; padding: 4px 0">Πανεπιστήμια</a>
+      <a href="#aporrito" style="color: #8a8a87; padding: 4px 0">Απόρρητο</a>
+      <a href="#eidopoiiseis" style="color: #8a8a87; padding: 4px 0">Ειδοποιήσεις</a>
+      <a href="#os" style="color: #8a8a87; padding: 4px 0">Ανά λειτουργικό</a>
+      <a href="#kodikas" style="color: #8a8a87; padding: 4px 0">Δομή κώδικα</a>
+      <a href="#cli" style="color: #8a8a87; padding: 4px 0">Γραμμή εντολών</a>
+      <a href="#build" style="color: #8a8a87; padding: 4px 0">Build και releases</a>
+    </nav>
+
+    <article style="flex: 1; min-width: 0; padding-bottom: 140px">
+      <section style="margin: 120px 0 0; max-width: 640px">
+        <a href="/notifier/" style="font-size: 14px; color: #8a8a87">← Notifier</a>
+        <h1 style="margin: 16px 0 0; font-weight: 400; font-size: 26px; line-height: 1.35; letter-spacing: -0.01em">Πώς δουλεύει</h1>
+        <p style="margin: 6px 0 0; font-size: 26px; line-height: 1.35; letter-spacing: -0.01em; color: #8a8a87; max-width: none">Ελέγχει, συγκρίνει, ειδοποιεί. Όλα στον υπολογιστή σου.</p>
+      </section>
+
+      <h2 id="eikona">Η μεγάλη εικόνα</h2>
+      <p>Ο Notifier ελέγχει σε τακτά διαστήματα το Open eClass, το RSS του τμήματος και την πύλη φοιτητών. Συγκρίνει ό,τι βρήκε με όσα έχει ήδη δει και σε ειδοποιεί μόνο για τα καινούργια. Δεν υπάρχει server.</p>
+<pre> ┌──────────────────────────── ο υπολογιστής σου ────────────────────────────┐
+ │                                                                           │
+ │  ┌────────────┐   εγκαθιστά    ┌──────────────────────────────────────┐  │
+ │  │  Launcher  │ ─────────────▶ │  Χρονοπρογραμματιστής λειτουργικού   │  │
+ │  │ (PySide6)  │                │  macOS: launchd (LaunchAgents)       │  │
+ │  └─────┬──────┘                │  Windows: Task Scheduler (κρυφά)     │  │
+ │        │ αποθηκεύει            └──────────────────┬───────────────────┘  │
+ │        ▼                                          │ ξυπνά το ίδιο         │
+ │  ┌────────────────────┐                           │ εκτελέσιμο με όρισμα  │
+ │  │ Keychain /         │ ◀──── κωδικοί ────┐       ▼                       │
+ │  │ Credential Manager │                   │  ┌──────────────────────┐    │
+ │  └────────────────────┘                   └──│  Job                 │    │
+ │                                              │  check · grades      │    │
+ │  ┌────────────────────┐   seen.db.enc        │  digest · labs       │    │
+ │  │ state/ (AES-GCM)   │ ◀──────────────────▶ └──────────┬───────────┘    │
+ │  └────────────────────┘                                 │                │
+ └─────────────────────────────────────────────────────────┼────────────────┘
+                                                           │ HTTPS
+              ┌──────────────────────┬─────────────────────┼──────────────┐
+              ▼                      ▼                     ▼              ▼
+        Open eClass            RSS τμήματος          Πύλη φοιτητών     ntfy / SMTP
+     (ανακοινώσεις,                                   (βαθμοί)        (ειδοποιήσεις)
+      εργασίες, ομάδες)</pre>
+      <p>Ένα εκτελέσιμο κάνει δύο δουλειές. Χωρίς ορίσματα ανοίγει τον launcher, το παράθυρο ρυθμίσεων. Με όρισμα (<code>check</code>, <code>grades</code>, <code>digest</code>, <code>labs</code>) τρέχει ένα job χωρίς παράθυρο και κλείνει. Ο χρονοπρογραμματιστής του λειτουργικού το καλεί με το σωστό όρισμα, οπότε η εφαρμογή δεν μένει ανοιχτή στο παρασκήνιο.</p>
+
+      <h2 id="jobs">Τα jobs</h2>
+      <div class="rows">
+        <div class="row"><span class="k"><code>check</code></span><span class="v">Κάθε 30 λεπτά. Νέες ανακοινώσεις από τα μαθήματα του eClass και από το RSS του τμήματος.</span></div>
+        <div class="row"><span class="k"><code>grades</code></span><span class="v">Κάθε 30 λεπτά. Νέοι ή αλλαγμένοι βαθμοί στην πύλη φοιτητών, όπου υποστηρίζεται.</span></div>
+        <div class="row"><span class="k"><code>digest</code></span><span class="v">08:00, 14:00, 21:00. Σύνοψη εργασιών με προθεσμίες, από την πιο κοντινή.</span></div>
+        <div class="row"><span class="k"><code>labs</code></span><span class="v">Με την πρώτη σύνοψη της ημέρας. Υπενθύμιση για τα εργαστήρια της ημέρας, από τις ομάδες χρηστών του eClass.</span></div>
+      </div>
+      <p class="muted">Τα ωράρια αλλάζουν από τον launcher.</p>
+
+      <h2 id="kyklos">Ένας κύκλος ελέγχου</h2>
+      <p>Παράδειγμα με το <code>check</code>:</p>
+<pre>  launchd / Task Scheduler
+          │
+          ▼
+  1. Φόρτωση ρυθμίσεων ─────── config.toml + κατάλογος πανεπιστημίων
+          │                    (eclass_url, RSS τμήματος, πύλη)
+          ▼
+  2. Κωδικοί ─────────────── Keychain / Credential Manager
+          │
+          ▼
+  3. Άνοιγμα state ────────── seen.db.enc ──αποκρυπτογράφηση──▶ προσωρινό seen.db
+          │
+          ▼
+  4. Συλλογή ─────────────── login στο eClass, λίστα μαθημάτων,
+          │                  ανακοινώσεις κάθε μαθήματος (RSS ή HTML),
+          │                  RSS τμήματος
+          ▼
+  5. Σύγκριση ────────────── κρατά μόνο ό,τι δεν έχει ξαναδεί
+          │
+          ├── τίποτα νέο ──▶ τέλος
+          ▼
+  6. Ειδοποίηση ──────────── desktop · ntfy · email
+          │
+          ▼
+  7. Αποθήκευση ──────────── κρυπτογράφηση → seen.db.enc
+                             το προσωρινό αρχείο σβήνεται</pre>
+      <p>Αν αποτύχει η αποστολή, τίποτα δεν σημειώνεται ως ειδωμένο και ξαναδοκιμάζεται στον επόμενο κύκλο.</p>
+
+      <h2 id="neo">Τι είναι «νέο»</h2>
+      <p>Κάθε στοιχείο έχει σταθερό αναγνωριστικό, που γράφεται σε μια μικρή βάση SQLite όταν το δει.</p>
+      <div class="rows">
+        <div class="row"><span class="k">Ανακοίνωση eClass</span><span class="v"><code>eclass:&lt;μάθημα&gt;:&lt;an_id&gt;</code></span></div>
+        <div class="row"><span class="k">RSS τμήματος</span><span class="v"><code>dept:&lt;guid ή link&gt;</code></span></div>
+        <div class="row"><span class="k">Βαθμός</span><span class="v">Μάθημα και εξεταστική, μαζί με την προηγούμενη τιμή.</span></div>
+      </div>
+      <p>Την πρώτη φορά που εμφανίζεται μια πηγή, για παράδειγμα ένα νέο μάθημα, οι υπάρχουσες ανακοινώσεις της καταγράφονται χωρίς ειδοποίηση. Έτσι η πρώτη εκτέλεση δεν σου στέλνει διακόσιες παλιές ανακοινώσεις.</p>
+
+      <h2 id="katalogos">Πανεπιστήμια</h2>
+      <p>Κάθε ίδρυμα είναι ένα αρχείο TOML στον κατάλογο. Από εκεί η εφαρμογή παίρνει τη διεύθυνση του Open eClass, τα RSS των τμημάτων και, όπου υποστηρίζεται, την πύλη φοιτητών. Στις ρυθμίσεις αρκεί:</p>
+<pre><code>[university]
+id = "uniwa"
+department = "ice"</code></pre>
+      <p>Για να προσθέσεις ίδρυμα, δες τον <a href="https://github.com/Fragkiskospall/notifier/blob/main/docs/PROSTHIKI-PANEPISTIMIOU.md" style="text-decoration: underline; text-underline-offset: 3px">οδηγό στο GitHub</a>.</p>
+
+      <h2 id="aporrito">Απόρρητο</h2>
+<pre>  Κωδικοί πανεπιστημίου ──▶ Keychain (Mac) / Credential Manager (Windows)
+  Κλειδί κρυπτογράφησης  ──▶ Keychain / Credential Manager
+  Ιστορικό               ──▶ state/seen.db.enc     AES-256-GCM
+  Τελευταίες εκτελέσεις  ──▶ logs/runs.json        μόνο ώρα και αποτέλεσμα</pre>
+      <ul>
+        <li>Η βάση σε απλή μορφή υπάρχει μόνο σε προσωρινό φάκελο όσο τρέχει ένα job.</li>
+        <li>Αν χαθεί το κλειδί, το ιστορικό ξαναχτίζεται από την αρχή, χωρίς ειδοποιήσεις.</li>
+        <li>Στην ιδιωτική λειτουργία, το κινητό και το email λένε μόνο «3 νέες ανακοινώσεις», χωρίς τίτλους, μαθήματα ή βαθμούς.</li>
+        <li>Η «Διαγραφή όλων» στον launcher σβήνει jobs, κωδικούς, ρυθμίσεις και ιστορικό.</li>
+      </ul>
+
+      <h2 id="eidopoiiseis">Ειδοποιήσεις</h2>
+      <div class="rows">
+        <div class="row"><span class="k">Υπολογιστής</span><span class="v">Ειδοποίηση του λειτουργικού, μία ανά στοιχείο, με link.</span></div>
+        <div class="row"><span class="k">ntfy</span><span class="v">Push στο κινητό μέσω ntfy.sh ή δικού σου server. Το topic το διαλέγεις εσύ.</span></div>
+        <div class="row"><span class="k">Email</span><span class="v">Μέσω SMTP, σε απλό κείμενο και HTML.</span></div>
+      </div>
+
+      <h2 id="os">Ανά λειτουργικό</h2>
+      <div class="rows">
+        <div class="row"><span class="k">macOS</span><span class="v">LaunchAgents και Keychain. Το app πρέπει να είναι στο /Applications, όχι σε Desktop, Documents ή Downloads.</span></div>
+        <div class="row"><span class="k">Windows</span><span class="v">Κρυφά tasks στο Task Scheduler, που τρέχουν και όταν ο υπολογιστής ξυπνήσει, και Credential Manager. Χωρίς παράθυρο κονσόλας.</span></div>
+      </div>
+
+      <h2 id="kodikas">Δομή κώδικα</h2>
+<pre>src/uniwa_notifier/
+├── cli.py            σημείο εισόδου: launcher ή job
+├── config.py         ρυθμίσεις + κατάλογος
+├── catalog/          ένα TOML ανά πανεπιστήμιο
+├── eclass/           login και ανάγνωση σελίδων Open eClass
+├── services/         πύλη φοιτητών (βαθμοί)
+├── feeds.py          RSS / Atom
+├── jobs/             announcements · grades · digest · labs
+├── notify/           desktop · ntfy · email
+├── state.py          τι έχουμε δει
+├── vault.py          κρυπτογράφηση του state
+├── secrets.py        Keychain / Credential Manager
+├── system/           macOS · Windows · Linux
+└── launcher/         οθόνες PySide6 και εγκατάσταση</pre>
+
+      <h2 id="cli">Γραμμή εντολών</h2>
+<pre><code>python -m uniwa_notifier check --dry-run -v   # τι θα έστελνε, χωρίς αποστολή
+python -m uniwa_notifier digest --dry-run
+python -m uniwa_notifier grades
+python -m uniwa_notifier labs</code></pre>
+      <p>Με <code>--dry-run</code> δεν στέλνεται τίποτα και δεν αλλάζει το ιστορικό.</p>
+
+      <h2 id="build">Build και releases</h2>
+      <p>Σε κάθε pull request τρέχουν τα tests σε Linux, Windows και macOS. Όταν μπει tag έκδοσης, το GitHub Actions χτίζει το .app και το .exe από τον ίδιο κώδικα και τα ανεβάζει στα Releases.</p>
+    </article>
+  </main>
+
+  <footer style="padding: 20px 28px 28px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; color: #8a8a87">
+    <span>© 2026 FragkiskOSource</span>
+    <a href="https://github.com/Fragkiskospall/notifier" style="color: #8a8a87">github.com/Fragkiskospall/notifier</a>
+  </footer>
+</div>
+</body>
+</html>
