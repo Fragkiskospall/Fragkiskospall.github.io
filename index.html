@@ -26,6 +26,7 @@ a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
       </a>
       <div style="display: flex; align-items: center; gap: 28px; font-size: 14px; color: #a1a1a6; flex-wrap: wrap">
         <a href="#projects" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">Projects</a>
+        <a href="#privacy" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">Απόρρητο</a>
         <a href="#manifesto" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">Μανιφέστο</a>
         <a href="https://github.com/Fragkiskospall" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #2a2a2e; border-radius: 999px; color: #ededed">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
@@ -168,6 +169,49 @@ a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
       <div style="padding: 40px 0; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; color: #8b8b91; font-size: 15px">
         <p style="margin: 0">Το επόμενο project είναι στο εργαστήρι.</p>
         <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">02 / ···</p>
+      </div>
+    </section>
+
+    <section id="privacy" style="max-width: 1360px; margin: 0 auto; padding: 160px 32px 0">
+      <p style="margin: 0 0 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8b91">Απόρρητο</p>
+      <h2 style="margin: 0; font-weight: 300; font-size: clamp(44px, 6.4vw, 96px); line-height: 1; letter-spacing: -0.045em">Τι ξέρουμε για σένα;<br><span style="color: #d4ff3f">Τίποτα.</span></h2>
+      <div style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px">
+        <div style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4ff3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+          <h3 style="margin: 0; font-weight: 500; font-size: 21px">Όλα στον υπολογιστή σου</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Κωδικοί στο Keychain ή στο Windows Credential Manager. Ρυθμίσεις και ιστορικό σε ένα αρχείο κρυπτογραφημένο με AES-256-GCM, που ανοίγει μόνο στη μνήμη.</p>
+        </div>
+        <div style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4ff3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+          <h3 style="margin: 0; font-weight: 500; font-size: 21px">Μη μας πιστέψεις, έλεγξέ το</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Ο κώδικας είναι ανοιχτός. Κάθε έκδοση χτίζεται δημόσια με υπογεγραμμένη απόδειξη προέλευσης, και η εφαρμογή μιλά μόνο με μια κλειστή λίστα διευθύνσεων.</p>
+        </div>
+        <div style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d4ff3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
+          <h3 style="margin: 0; font-weight: 500; font-size: 21px">Χωρίς ψιλά γράμματα</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Δεν έχουμε server, analytics ή λογαριασμούς. Όπου μπαίνει τρίτος, το λέμε ανοιχτά, και το push στο κινητό φτάνει χωρίς περιεχόμενο.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 72px; overflow-x: auto">
+        <table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px">
+          <caption style="text-align: left; padding-bottom: 20px; font-size: 22px; font-weight: 400; letter-spacing: -0.01em; color: #ededed">Πού ζει κάθε τι</caption>
+          <thead>
+            <tr style="text-align: left; color: #8b8b91; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em">
+              <th scope="col" style="padding: 0 16px 14px 0; font-weight: 400; border-bottom: 1px solid #2a2a2e">Δεδομένο</th>
+              <th scope="col" style="padding: 0 16px 14px 0; font-weight: 400; border-bottom: 1px solid #2a2a2e">Πού</th>
+              <th scope="col" style="padding: 0 16px 14px 0; font-weight: 400; border-bottom: 1px solid #2a2a2e">Προστασία</th>
+              <th scope="col" style="padding: 0 0 14px; font-weight: 400; border-bottom: 1px solid #2a2a2e">Ποιος το βλέπει</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" style="text-align: left; padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Κωδικοί πανεπιστημίου</th><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Keychain / Credential Manager του υπολογιστή σου</td><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Κρυπτογράφηση του λειτουργικού</td><td style="padding: 18px 0; border-bottom: 1px solid #1c1c1f">Μόνο εσύ</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Ρυθμίσεις και ιστορικό</th><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Ένα αρχείο στον φάκελο της εφαρμογής</td><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">AES-256-GCM, ποτέ αποκρυπτογραφημένο στον δίσκο</td><td style="padding: 18px 0; border-bottom: 1px solid #1c1c1f">Μόνο εσύ</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Push στο κινητό</th><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Περνά από το ntfy.sh</td><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Μόνο «Νέα ανακοίνωση», χωρίς κείμενο</td><td style="padding: 18px 0; border-bottom: 1px solid #1c1c1f">Κανείς το περιεχόμενο</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">Λειτουργία 24/7</th><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Private repo στο δικό σου GitHub</td><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Κρυπτογραφούνται πριν φύγουν από τον υπολογιστή</td><td style="padding: 18px 0; border-bottom: 1px solid #1c1c1f">Εσύ και το GitHub όσο τρέχει</td></tr>
+            <tr><th scope="row" style="text-align: left; padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; font-weight: 500">FragkiskOSource</th><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Πουθενά. Δεν υπάρχει server.</td><td style="padding: 18px 16px 18px 0; border-bottom: 1px solid #1c1c1f; color: #a1a1a6">Χωρίς analytics, χωρίς λογαριασμούς</td><td style="padding: 18px 0; border-bottom: 1px solid #1c1c1f; color: #d4ff3f">Τίποτα</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
