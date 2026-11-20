@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Notifier · FragkiskOSource</title>
-<meta name="description" content="Ειδοποιήσεις για φοιτητές: ανακοινώσεις, εργασίες, εργαστήρια και βαθμοί από το Open eClass.">
+<meta name="description" content="Ειδοποιήσεις για φοιτητές από το Open eClass, για Mac και Windows. Δωρεάν και ανοιχτός κώδικας.">
 <meta name="theme-color" content="#0a0a0b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 22 22%22%3E%3Crect width=%2222%22 height=%2222%22 rx=%225%22 fill=%22%230a0a0b%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%227.5%22 fill=%22none%22 stroke=%22%23ededed%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%223%22 fill=%22%23d4ff3f%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +34,18 @@ a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
   <main>
     <section style="max-width: 1360px; margin: 0 auto; padding: 104px 32px 80px">
       <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #d4ff3f; color: #0a0a0b">Σύντομα</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #d4ff3f; color: #0a0a0b">v3.0 · Mac & Windows</span>
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">Python 3.11+</span>
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">MIT</span>
       </div>
       <h1 style="margin: 0; font-weight: 300; font-size: clamp(56px, 9vw, 144px); line-height: 0.92; letter-spacing: -0.05em">Notifier</h1>
       <div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; align-items: flex-end">
         <p style="margin: 0; max-width: 620px; font-size: 22px; line-height: 1.5; color: #d6d6da">Σταμάτα να κάνεις refresh στο eClass. Ο Notifier ελέγχει για σένα ανακοινώσεις, εργασίες, εργαστήρια και βαθμούς, και σε ειδοποιεί στο κινητό.</p>
-        <span style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px dashed #3a3a40; color: #a1a1a6; font-size: 15px">Repo: σύντομα στο GitHub</span>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+            <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-macos.zip" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #ededed; color: #0a0a0b; font-weight: 500; font-size: 15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Λήψη για Mac</a>
+            <a href="https://github.com/Fragkiskospall/notifier/releases/latest/download/FragkiskOSource-Notifier-windows.zip" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid #2a2a2e; color: #ededed; font-size: 15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Λήψη για Windows</a>
+            <a href="https://github.com/Fragkiskospall/notifier" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 999px; color: #a1a1a6; font-size: 15px">Κώδικας στο GitHub →</a>
+          </div>
       </div>
     </section>
 
@@ -50,18 +54,18 @@ a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
       <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
         <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">01</span>
-          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Φτιάξε το δικό σου αντίγραφο</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Από το template δημιουργείς ένα private repo στον λογαριασμό σου. Κανείς άλλος δεν το βλέπει.</p>
+          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Κατέβασε την εφαρμογή</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Για Mac ή Windows. Στο Mac σύρε την στο /Applications και άνοιξέ την με δεξί κλικ → Άνοιγμα την πρώτη φορά.</p>
         </li>
         <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">02</span>
-          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Τρέξε τον οδηγό ρύθμισης</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Διαλέγεις πανεπιστήμιο και τμήμα. Οι κωδικοί σου μπαίνουν κατευθείαν στα GitHub Secrets.</p>
+          <h3 style="margin: 0; font-weight: 500; font-size: 22px">Διάλεξε πανεπιστήμιο και συνδέσου</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Η σύνδεση ελέγχεται στη στιγμή. Οι κωδικοί μπαίνουν στο Keychain ή στο Credential Manager, όχι σε αρχείο.</p>
         </li>
         <li style="background: #111113; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 16px; min-height: 240px">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">03</span>
           <h3 style="margin: 0; font-weight: 500; font-size: 22px">Πάρε ειδοποιήσεις</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Push μέσω ntfy, email ή ειδοποίηση macOS. Τρέχει στο GitHub Actions, χωρίς να μένει ανοιχτός ο υπολογιστής σου.</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Στο κινητό μέσω ntfy (σκανάρεις ένα QR) ή στον υπολογιστή. Οι έλεγχοι τρέχουν αθόρυβα στο παρασκήνιο.</p>
         </li>
       </ol>
     </section>
@@ -109,17 +113,18 @@ a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
     <section aria-labelledby="setup" style="max-width: 1360px; margin: 0 auto; padding: 80px 32px 160px; border-top: 1px solid #1c1c1f">
       <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
         <div style="flex: 1 1 320px; min-width: 0">
-          <h2 id="setup" style="margin: 0 0 16px; font-weight: 400; font-size: 40px; letter-spacing: -0.03em">Δοκίμασέ το τοπικά</h2>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6; max-width: 380px">Το dry run δείχνει τι θα σου έστελνε, χωρίς να στείλει τίποτα.</p>
+          <h2 id="setup" style="margin: 0 0 16px; font-weight: 400; font-size: 40px; letter-spacing: -0.03em">Για developers</h2>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6; max-width: 380px">Ο κώδικας είναι ανοιχτός (MIT). Το dry run δείχνει τι θα σου έστελνε, χωρίς να στείλει τίποτα.</p>
         </div>
-        <pre style="flex: 2 1 560px; min-width: 0; margin: 0; overflow-x: auto; background: #111113; border: 1px solid #1c1c1f; border-radius: 14px; padding: 28px 32px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.9; color: #d6d6da"><code><span style="color: #8b8b91"># εγκατάσταση</span>
-pip install -e .
+        <pre style="flex: 2 1 560px; min-width: 0; margin: 0; overflow-x: auto; background: #111113; border: 1px solid #1c1c1f; border-radius: 14px; padding: 28px 32px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.9; color: #d6d6da"><code><span style="color: #8b8b91"># κώδικας</span>
+git clone https://github.com/Fragkiskospall/notifier
+pip install -e ".[launcher]"
 
-<span style="color: #8b8b91"># κωδικοί στο Keychain, όχι σε αρχείο</span>
-python -m notifier secrets set ECLASS_USERNAME
+<span style="color: #8b8b91"># ο launcher</span>
+fragkiskosource-notifier
 
 <span style="color: #8b8b91"># τι θα έστελνε τώρα;</span>
-python -m notifier digest <span style="color: #d4ff3f">--dry-run</span></code></pre>
+python -m uniwa_notifier digest <span style="color: #d4ff3f">--dry-run</span></code></pre>
       </div>
     </section>
   </main>
