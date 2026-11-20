@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FragkiskOSource</title>
+<meta name="description" content="Μικρά open-source εργαλεία για συγκεκριμένα προβλήματα, από τον Φραγκίσκο.">
+<meta name="theme-color" content="#0a0a0b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 22 22%22%3E%3Crect width=%2222%22 height=%2222%22 rx=%225%22 fill=%22%230a0a0b%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%227.5%22 fill=%22none%22 stroke=%22%23ededed%22 stroke-width=%221.5%22/%3E%3Ccircle cx=%2211%22 cy=%2211%22 r=%223%22 fill=%22%23d4ff3f%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0a0a0b}
+a{color:#ededed;text-decoration:none}a:hover{color:#ffffff}
+</style>
+<style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #0a0a0b; color: #ededed; font-family: 'Inter Tight', system-ui, sans-serif; -webkit-font-smoothing: antialiased">
+
+  <header style="position: sticky; top: 0; z-index: 10; background: rgba(10,10,11,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid #1c1c1f">
+    <nav aria-label="Κύρια πλοήγηση" style="max-width: 1360px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; min-height: 44px">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9.5" fill="none" stroke="#ededed" stroke-width="1.5"></circle><circle cx="11" cy="11" r="3.5" fill="#d4ff3f"></circle></svg>
+        <span>Fragkisk<span style="color: #d4ff3f">OS</span>ource</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 28px; font-size: 14px; color: #a1a1a6; flex-wrap: wrap">
+        <a href="#projects" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">Projects</a>
+        <a href="#manifesto" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">Μανιφέστο</a>
+        <a href="https://github.com/Fragkiskospall" style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #2a2a2e; border-radius: 999px; color: #ededed">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+          GitHub
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section style="max-width: 1360px; margin: 0 auto; padding: 120px 32px 72px">
+      <p style="margin: 0 0 28px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #8b8b91">Open source · Αθήνα · από το 2026</p>
+      <h1 style="margin: 0; max-width: 1100px; font-weight: 300; font-size: clamp(48px, 7.4vw, 112px); line-height: 0.98; letter-spacing: -0.045em">Μικρά εργαλεία<br>για συγκεκριμένα<br><span style="color: #6e6e74">προβλήματα.</span></h1>
+      <div style="margin-top: 48px; display: flex; gap: 40px; justify-content: space-between; align-items: flex-end; flex-wrap: wrap">
+        <p style="margin: 0; max-width: 520px; font-size: 19px; line-height: 1.55; color: #a1a1a6">Ανοιχτός κώδικας που γράφω για ανάγκες που κανείς άλλος δεν κάλυψε. Δωρεάν, χωρίς tracking, και τα δεδομένα σου δεν φεύγουν ποτέ από τα χέρια σου.</p>
+        <a href="#projects" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #ededed; color: #0a0a0b; font-weight: 500; font-size: 15px">
+          Δες τα projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+        </a>
+      </div>
+    </section>
+
+    <section aria-label="Τι κάνει ο Notifier" style="max-width: 1360px; margin: 0 auto; padding: 0 32px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px">
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#121214"></rect>
+            <g fill="none" stroke="#2c2c31" stroke-width="1"><circle cx="200" cy="230" r="40"></circle><circle cx="200" cy="230" r="80"></circle><circle cx="200" cy="230" r="120"></circle><circle cx="200" cy="230" r="160"></circle><circle cx="200" cy="230" r="200"></circle></g>
+            <circle cx="200" cy="230" r="120" fill="none" stroke="#d4ff3f" stroke-width="2" stroke-dasharray="4 10"></circle>
+            <circle cx="200" cy="230" r="14" fill="#d4ff3f"></circle>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Ανακοινώσεις</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a1a1a6">κάθε 30′</span>
+          </figcaption>
+        </figure>
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#e9e6df"></rect>
+            <g fill="#0a0a0b"><rect x="60" y="90" width="280" height="10"></rect><rect x="60" y="130" width="200" height="10"></rect><rect x="60" y="170" width="240" height="10"></rect><rect x="60" y="210" width="120" height="10"></rect></g>
+            <rect x="60" y="270" width="280" height="140" fill="#d4ff3f"></rect>
+            <g fill="#0a0a0b" font-family="JetBrains Mono, monospace" font-size="28"><text x="80" y="355">08 · 14 · 21</text></g>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Σύνοψη εργασιών</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #d6d6da">3× ημέρα</span>
+          </figcaption>
+        </figure>
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#16161a"></rect>
+            <g fill="#26262b"><rect x="40" y="60" width="44" height="44" rx="6"></rect><rect x="96" y="60" width="44" height="44" rx="6"></rect><rect x="152" y="60" width="44" height="44" rx="6"></rect><rect x="208" y="60" width="44" height="44" rx="6"></rect><rect x="264" y="60" width="44" height="44" rx="6"></rect><rect x="320" y="60" width="44" height="44" rx="6"></rect>
+            <rect x="40" y="116" width="44" height="44" rx="6"></rect><rect x="96" y="116" width="44" height="44" rx="6"></rect><rect x="208" y="116" width="44" height="44" rx="6"></rect><rect x="264" y="116" width="44" height="44" rx="6"></rect><rect x="320" y="116" width="44" height="44" rx="6"></rect>
+            <rect x="40" y="172" width="44" height="44" rx="6"></rect><rect x="96" y="172" width="44" height="44" rx="6"></rect><rect x="152" y="172" width="44" height="44" rx="6"></rect><rect x="208" y="172" width="44" height="44" rx="6"></rect><rect x="320" y="172" width="44" height="44" rx="6"></rect>
+            <rect x="40" y="228" width="44" height="44" rx="6"></rect><rect x="96" y="228" width="44" height="44" rx="6"></rect><rect x="152" y="228" width="44" height="44" rx="6"></rect><rect x="264" y="228" width="44" height="44" rx="6"></rect><rect x="320" y="228" width="44" height="44" rx="6"></rect></g>
+            <g fill="#d4ff3f"><rect x="152" y="116" width="44" height="44" rx="6"></rect><rect x="264" y="172" width="44" height="44" rx="6"></rect><rect x="208" y="228" width="44" height="44" rx="6"></rect></g>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Εργαστήρια</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a1a1a6">υπενθύμιση πρωί</span>
+          </figcaption>
+        </figure>
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#0f0f11"></rect>
+            <g font-family="Inter Tight, sans-serif" font-weight="300" fill="#ededed"><text x="40" y="300" font-size="220" letter-spacing="-12">8,5</text></g>
+            <rect x="40" y="340" width="230" height="4" fill="#d4ff3f"></rect>
+            <rect x="40" y="340" width="320" height="4" fill="#2a2a2e" opacity="0.6"></rect>
+            <rect x="40" y="340" width="272" height="4" fill="#d4ff3f"></rect>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Νέοι βαθμοί</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a1a1a6">μόλις βγουν</span>
+          </figcaption>
+        </figure>
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#d4ff3f"></rect>
+            <g font-family="JetBrains Mono, monospace" font-size="15" fill="#0a0a0b" opacity="0.55"><text x="28" y="60">a3 f9 0c 7e 12 bd 44 e1 9a 05 c6</text><text x="28" y="88">7f 2d 81 e0 3b 96 d4 1a 6c f2 08</text><text x="28" y="116">c1 5e 0b 77 a8 39 e2 64 1d 9f b3</text><text x="28" y="144">08 d6 4a 2f 91 c3 7b e8 50 16 ad</text><text x="28" y="172">e4 31 9c 06 b8 5d 27 f0 83 4e 1b</text></g>
+            <g fill="none" stroke="#0a0a0b" stroke-width="10"><path d="M150 290v-40a50 50 0 0 1 100 0v40"></path></g>
+            <rect x="125" y="290" width="150" height="120" rx="10" fill="#0a0a0b"></rect>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Κρυπτογραφημένο state</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ededed">AES-256-GCM</span>
+          </figcaption>
+        </figure>
+
+        <figure style="margin: 0; position: relative; aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; background: #111113">
+          <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="500" fill="#141417"></rect>
+            <rect x="120" y="70" width="160" height="320" rx="28" fill="none" stroke="#3a3a40" stroke-width="2"></rect>
+            <rect x="136" y="120" width="128" height="44" rx="10" fill="#26262b"></rect>
+            <rect x="136" y="174" width="128" height="44" rx="10" fill="#d4ff3f"></rect>
+            <rect x="136" y="228" width="128" height="44" rx="10" fill="#26262b"></rect>
+            <circle cx="290" cy="80" r="16" fill="#d4ff3f"></circle>
+          </svg>
+          <figcaption style="position: absolute; left: 0; right: 0; bottom: 0; padding: 20px; display: flex; justify-content: space-between; align-items: flex-end; background: linear-gradient(transparent, rgba(0,0,0,0.75))">
+            <span style="font-size: 15px; font-weight: 500">Push, email, macOS</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #a1a1a6">χωρίς περιεχόμενο</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <section id="projects" style="max-width: 1360px; margin: 0 auto; padding: 160px 32px 0">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap; border-bottom: 1px solid #1c1c1f; padding-bottom: 24px">
+        <h2 style="margin: 0; font-weight: 400; font-size: 44px; letter-spacing: -0.03em">Projects</h2>
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8b8b91">01 / 01</p>
+      </div>
+
+      <article style="display: flex; flex-wrap: wrap; gap: 48px; padding: 56px 0; border-bottom: 1px solid #1c1c1f">
+        <div style="flex: 1 1 380px; min-width: 0">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; background: #d4ff3f; color: #0a0a0b">Σύντομα</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">Python</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">MIT</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid #2a2a2e; color: #a1a1a6">GitHub Actions</span>
+          </div>
+          <h3 style="margin: 0; font-weight: 300; font-size: 64px; line-height: 1; letter-spacing: -0.04em">Notifier</h3>
+          <p style="margin: 12px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8b8b91">working title</p>
+        </div>
+        <div style="flex: 1.4 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+          <p style="margin: 0; font-size: 22px; line-height: 1.5; color: #d6d6da">Ειδοποιήσεις για φοιτητές ελληνικών πανεπιστημίων. Παρακολουθεί το Open eClass, το site του τμήματος και την πύλη φοιτητών, και σου λέει μόνο ό,τι άλλαξε.</p>
+          <ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: #1c1c1f; border: 1px solid #1c1c1f; border-radius: 12px; overflow: hidden">
+            <li style="background: #0a0a0b; padding: 20px"><p style="margin: 0 0 6px; font-weight: 500">Ανακοινώσεις</p><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #a1a1a6">eClass ανά μάθημα και RSS τμήματος.</p></li>
+            <li style="background: #0a0a0b; padding: 20px"><p style="margin: 0 0 6px; font-weight: 500">Εργασίες</p><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #a1a1a6">Σύνοψη με προθεσμίες και κατάσταση υποβολής.</p></li>
+            <li style="background: #0a0a0b; padding: 20px"><p style="margin: 0 0 6px; font-weight: 500">Εργαστήρια</p><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #a1a1a6">Υπενθύμιση από τις ομάδες χρηστών σου.</p></li>
+            <li style="background: #0a0a0b; padding: 20px"><p style="margin: 0 0 6px; font-weight: 500">Βαθμοί</p><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #a1a1a6">Ειδοποίηση μόλις περαστεί νέος βαθμός.</p></li>
+          </ul>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a href="/notifier/" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: #ededed; color: #0a0a0b; font-weight: 500; font-size: 15px">Μάθε περισσότερα
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+            </a>
+            <span style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px dashed #3a3a40; color: #a1a1a6; font-size: 15px">Repo: σύντομα στο GitHub</span>
+          </div>
+        </div>
+      </article>
+
+      <div style="padding: 40px 0; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; color: #8b8b91; font-size: 15px">
+        <p style="margin: 0">Το επόμενο project είναι στο εργαστήρι.</p>
+        <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">02 / ···</p>
+      </div>
+    </section>
+
+    <section id="manifesto" style="max-width: 1360px; margin: 0 auto; padding: 140px 32px 160px">
+      <h2 style="margin: 0 0 64px; font-weight: 400; font-size: 44px; letter-spacing: -0.03em">Μανιφέστο</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px">
+        <div style="border-top: 1px solid #d4ff3f; padding-top: 24px">
+          <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #d4ff3f">01</p>
+          <h3 style="margin: 0 0 12px; font-weight: 500; font-size: 22px; letter-spacing: -0.01em">Δωρεάν, πραγματικά</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Ούτε συνδρομή, ούτε freemium. Τρέχει στο δωρεάν πλάνο του GitHub, στον δικό σου λογαριασμό.</p>
+        </div>
+        <div style="border-top: 1px solid #2a2a2e; padding-top: 24px">
+          <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8b8b91">02</p>
+          <h3 style="margin: 0 0 12px; font-weight: 500; font-size: 22px; letter-spacing: -0.01em">Τα δεδομένα μένουν δικά σου</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Κανένας server δικός μου. Οι κωδικοί σου ζουν στα secrets σου και το state είναι κρυπτογραφημένο.</p>
+        </div>
+        <div style="border-top: 1px solid #2a2a2e; padding-top: 24px">
+          <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8b8b91">03</p>
+          <h3 style="margin: 0 0 12px; font-weight: 500; font-size: 22px; letter-spacing: -0.01em">Niche με πρόθεση</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #a1a1a6">Λύνω ένα πρόβλημα καλά, για λίγους ανθρώπους που το έχουν πραγματικά. Ελληνικά πρώτα.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid #1c1c1f">
+    <div style="max-width: 1360px; margin: 0 auto; padding: 48px 32px 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap">
+      <p style="margin: 0; font-weight: 300; font-size: clamp(40px, 6vw, 88px); letter-spacing: -0.045em; line-height: 1; color: #2e2e33">Fragkisk<span style="color: #d4ff3f">OS</span>ource</p>
+      <div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #8b8b91">
+        <a href="https://github.com/Fragkiskospall" style="color: #a1a1a6; min-height: 44px; display: flex; align-items: center">GitHub</a>
+        <span style="min-height: 44px; display: flex; align-items: center">Κώδικας υπό άδεια MIT</span>
+        <span style="min-height: 44px; display: flex; align-items: center">© 2026</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
