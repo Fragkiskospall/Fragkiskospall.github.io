@@ -1,0 +1,5 @@
+Contact: https://github.com/Fragkiskospall/notifier/security/advisories/new
+Expires: 2027-11-21T00:00:00.000Z
+Preferred-Languages: el, en
+Canonical: https://fragkiskospall.github.io/.well-known/security.txt
+Policy: https://github.com/Fragkiskospall/notifier/blob/main/SECURITY.md

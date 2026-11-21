@@ -2,13 +2,14 @@
 <html lang="el">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FragkiskOSource</title>
 <meta name="description" content="Μικρά εργαλεία ανοιχτού κώδικα, φτιαγμένα για συγκεκριμένα προβλήματα.">
 <meta name="theme-color" content="#0b0b0b">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%230b0b0b%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%225%22 fill=%22%23e8e8e6%22/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/fonts/inter.css">
 <style>
 body{margin:0;background:#0b0b0b}
 a{color:#e8e8e6;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
@@ -29,24 +30,7 @@ a{color:#e8e8e6;text-decoration:none}a:hover{text-decoration:underline;text-unde
     <p style="margin: 120px 0 96px; max-width: 620px; font-size: 26px; line-height: 1.35; letter-spacing: -0.01em">Μικρά εργαλεία ανοιχτού κώδικα, φτιαγμένα για συγκεκριμένα προβλήματα.</p>
 
     <a href="/notifier/" aria-label="Notifier" style="display: block">
-      <div style="aspect-ratio: 21 / 9; max-height: 620px; width: 100%; background: #111111; overflow: hidden">
-        <svg viewBox="0 0 1200 514" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <defs>
-            <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.1" fill="#262626"></circle>
-            </pattern>
-          </defs>
-          <rect width="1200" height="514" fill="#111111"></rect>
-          <rect width="1200" height="514" fill="url(#dots)"></rect>
-          <g fill="none" stroke-width="1">
-            <circle cx="780" cy="257" r="64" stroke="#454543"></circle>
-            <circle cx="780" cy="257" r="132" stroke="#363634"></circle>
-            <circle cx="780" cy="257" r="204" stroke="#2b2b29"></circle>
-            <circle cx="780" cy="257" r="280" stroke="#222220"></circle>
-          </g>
-          <circle cx="780" cy="257" r="5" fill="#e8e8e6"></circle>
-        </svg>
-      </div>
+      <div style="aspect-ratio: 21 / 9; max-height: 620px; width: 100%; background: #1c1c1b"></div>
     </a>
     <div style="display: flex; justify-content: space-between; gap: 24px; padding: 14px 0 0; font-size: 14px">
       <a href="/notifier/">Notifier</a>
